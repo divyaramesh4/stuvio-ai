@@ -1,0 +1,5 @@
+Flask
+gTTS
+moviepy
+google-generativeai
+python-dotenv
