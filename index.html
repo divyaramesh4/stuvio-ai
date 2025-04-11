@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>AI Video Generator</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <style>
+    body {
+      background-color: #0f0f0f;
+      color: #00ffcc;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    .header {
+      font-size: 28px;
+      font-weight: 700;
+      padding: 30px 40px;
+      color: #00ffe0;
+      text-shadow: 0 0 10px #00ffe0;
+      text-align: center;
+    }
+    .prompt-container {
+      max-width: 700px;
+      margin: 30px auto;
+      background: #121212;
+      padding: 30px;
+      border-radius: 16px;
+      box-shadow: 0 0 12px rgba(0, 255, 204, 0.15);
+    }
+    .video-container {
+      max-width: 800px;
+      margin: 30px auto;
+      text-align: center;
+    }
+    .quiz-container {
+      max-width: 800px;
+      margin: 30px auto;
+      background-color: #111;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,255,204,0.2);
+    }
+    .btn-primary {
+      background-color: #00ffcc;
+      border: none;
+      color: #000;
+      font-weight: bold;
+    }
+    .btn-primary:hover {
+      background-color: #00ffe0;
+    }
+    .form-control {
+      background: #000;
+      border: 2px solid #00ffcc;
+      color: #00ffcc;
+    }
+    .form-control::placeholder {
+      color: #66ffe6;
+    }
+    pre {
+      text-align: left;
+      white-space: pre-wrap;
+      word-wrap: break-word;
+      font-family: monospace;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="header">
+    ⚡ AI Video Generator & Quiz Wizard
+  </div>
+
+  <div class="prompt-container">
+    <form method="POST" action="/generate">
+      <div class="mb-3">
+        <label for="prompt" class="form-label">Enter your prompt</label>
+        <div class="input-group">
+          <input
+            type="text"
+            class="form-control"
+            id="prompt"
+            name="prompt"
+            placeholder="e.g. Explain black holes in simple terms"
+            required
+            minlength="25"
+            title="Please enter at least 25 characters for a good prompt"
+          >
+          <button class="btn btn-primary" type="submit">Generate</button>
+        </div>
+      </div>
+    </form>
+  </div>
+
+  {% if video_url %}
+  <div class="video-container">
+    <h5 class="mb-3">🎥 Generated Video</h5>
+    <video width="100%" height="auto" controls>
+      <source src="{{ video_url }}" type="video/mp4">
+      Your browser does not support the video tag.
+    </video>
+  </div>
+  {% endif %}
+
+  {% if quiz %}
+  <div class="quiz-container">
+    <h5 class="mb-3">🧠 Quiz Based on Topic</h5>
+    <pre>{{ quiz }}</pre>
+  </div>
+  {% endif %}
+
+</body>
+</html>
