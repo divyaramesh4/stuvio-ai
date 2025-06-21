@@ -1,48 +1,59 @@
 
+# 🎓 Stuvio AI: Interactive Educational Video & Quiz Generator
+
+---
 
 ## 📌 Project Overview
 
-**Stuvio AI** is a web application designed to enhance learning by generating short, informative videos and interactive quizzes on any given topic. Leveraging **AI**, it creates engaging content, synthesizes speech, and provides a structured learning experience.
+**Stuvio AI** is a **web application** designed to enhance learning by generating **short, informative videos** and **interactive quizzes** on any given topic.  
+Leveraging **Artificial Intelligence**, it creates **engaging content**, synthesizes speech, and offers a structured learning experience for students.
 
 ---
 
 ## ✨ Features
 
-- 📚 **Topic-Based Content Generation** – Input a topic and generate relevant educational content.
-- 🎥 **Video Creation** – Synthesizes speech and combines it with a background image.
-- 📝 **Interactive Quizzes** – Tests understanding with MCQs based on the topic.
-- 💻 **Dynamic UI** – Smooth and user-friendly interface.
+- **📚 Topic-Based Content Generation** – Input a topic and generate relevant educational material.
+- **🎥 Video Creation** – Converts the content to speech and merges it with a background image.
+- **📝 Interactive Quizzes** – Creates multiple-choice questions to reinforce understanding.
+- **💻 Dynamic UI** – Clean, intuitive, and user-friendly interface.
 
 ---
 
 ## 🛠️ Technologies Used
 
-- **Backend**: Flask (Python Web Framework)  
-- **AI Integration**: Google Gemini API  
-- **Text-to-Speech**: gTTS (Google Text-to-Speech)  
-- **Video Processing**: moviepy  
-- **Frontend**: HTML, CSS, JavaScript  
-- **Environment Management**: Python `venv`  
-- **Dependency Management**: pip  
+| Category              | Tools/Frameworks                  |
+|-----------------------|-----------------------------------|
+| **Backend**           | Flask (Python Web Framework)      |
+| **AI Integration**    | Google Gemini API                 |
+| **Text-to-Speech**    | gTTS (Google Text-to-Speech)      |
+| **Video Processing**  | moviepy                           |
+| **Frontend**          | HTML, CSS, JavaScript             |
+| **Environment**       | Python `venv` (Virtual Environment) |
+| **Dependency Manager**| pip                               |
 
 ---
 
 ## 📁 Project Structure
 
-- `ai_video.py` – Python script for AI/video generation logic  
-- `index.py` – Main server file  
-- `static/` – Static assets  
-  - `style.css` – Custom styling  
-  - `script.js` – JavaScript for interactivity  
-  - `background.jpg` – Background image used in videos  
-  - `output.mp4` – Generated video (appears here)  
-- `templates/` – HTML templates  
-  - `index.html` – Main landing page  
-  - `video_page.html` – Displays the generated video  
-  - `quiz_page.html` – Displays quiz questions  
-- `.env` – Stores environment variables (keep secret)  
-- `requirements.txt` – Lists Python dependencies  
-- `README.md` – This file  
+```
+
+stuvio\_project/
+├── ai\_video.py           # Core logic for content and video generation
+├── index.py              # Flask app entry point
+├── static/               # CSS, JS, image, and output video
+│   ├── style.css
+│   ├── script.js
+│   ├── background.jpg
+│   └── output.mp4        # Generated video output
+├── templates/            # HTML files for rendering views
+│   ├── index.html
+│   ├── video\_page.html
+│   └── quiz\_page.html
+├── .env                  # API keys and sensitive variables (excluded from Git)
+├── requirements.txt      # Project dependencies
+└── README.md             # You are here
+
+````
 
 ---
 
@@ -50,17 +61,19 @@
 
 ### ✅ Prerequisites
 
-- Python 3.8+
-- pip (Python package installer)
-- FFmpeg (required for moviepy)
+- **Python 3.8+**
+- **pip**
+- **FFmpeg** (used by `moviepy`)
 
 ### 🔧 Install FFmpeg
 
-- **Windows**: Download from [ffmpeg.org](https://ffmpeg.org), extract, and add `bin/` folder to PATH  
+- **Windows**:  
+  Download from [ffmpeg.org](https://ffmpeg.org), extract it, and add the `bin/` path to your system’s environment variables.
+
 - **macOS**:
-
+  ```bash
   brew install ffmpeg
-
+````
 
 * **Linux (Ubuntu/Debian)**:
 
@@ -72,7 +85,7 @@
 
 ### 🔧 Installation Steps
 
-1. **Clone the repository** or move to the project folder:
+1. **Clone or open your project folder**:
 
    ```bash
    git clone <your-repo-url>
@@ -91,31 +104,31 @@
    python -m venv venv
    ```
 
-   * Windows PowerShell:
+   * **PowerShell**:
 
      ```bash
      .\venv\Scripts\Activate.ps1
      ```
-   * Windows CMD:
+   * **CMD**:
 
      ```bash
      venv\Scripts\activate.bat
      ```
-   * macOS/Linux:
+   * **macOS/Linux**:
 
      ```bash
      source venv/bin/activate
      ```
 
-3. **Install required packages**:
+3. **Install dependencies**:
 
    ```bash
    pip install -r requirements.txt
    ```
 
-4. **Set up environment variables**
+4. **Configure environment variables**
 
-   Create a `.env` file in the root folder with:
+   Create a `.env` file in the root directory and add:
 
    ```
    GEMINI_API_KEY="YOUR_ACTUAL_GEMINI_API_KEY"
@@ -126,29 +139,31 @@
 
 ## 🚀 Run the App
 
+Start the Flask server:
+
 ```bash
 python api/index.py
 ```
 
-Visit [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
+Open your browser and visit: [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
 ---
 
-## 🧪 Usage
+## 🧪 Usage Guide
 
-1. Enter a topic in the input box.
+1. Enter a **topic** on the homepage.
 2. Click **Generate Video** or **Generate Quiz**.
-3. Wait for the AI to generate the result.
-4. The video/quiz will be displayed on a new page.
+3. Wait for the system to process your request.
+4. The resulting video or quiz will be displayed on a new screen.
 
 ---
 
 ## ⚠️ Important Notes
 
-* **Video generation** may be slow for long topics.
-* **FFmpeg** must be properly installed for moviepy to work.
-* **Check terminal logs** for debugging if you see error messages in the browser.
-* **Gemini API** usage may be limited or charged—check your usage.
+* **Video generation** time may vary depending on the length of the input.
+* Make sure **FFmpeg** is properly installed and accessible from your system’s PATH.
+* If something goes wrong, **check terminal logs** where Flask is running.
+* Be cautious with your **Gemini API usage** — stay within rate limits and check for potential billing.
 
 ---
 
