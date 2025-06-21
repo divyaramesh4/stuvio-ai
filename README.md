@@ -1,158 +1,165 @@
-# Stuvio AI: Interactive Educational Video & Quiz Generator
+Sure! Here's a clean and styled **README.md** file you can copy and paste directly. I've formatted the **project structure** section using bullet points instead of the messy tree diagram, so it looks neat and readable inside a `.md` file:
 
-## Project Overview
+---
 
-Stuvio AI is a web application designed to enhance learning by generating short, informative videos and interactive quizzes on any given topic. Leveraging AI, it creates engaging content, synthesizes speech, and provides a structured learning experience.
+````markdown
+# 🎓 Stuvio AI: Interactive Educational Video & Quiz Generator
 
-## Features
+---
 
-* **Topic-Based Content Generation:** Input a topic, and the AI generates relevant educational content.
-* **Video Creation:** Synthesizes speech from the generated content and combines it with a background image to create short, educational videos.
-* **Interactive Quizzes:** Generates multiple-choice quizzes based on the content to test user understanding.
-* **Dynamic UI:** Provides a user-friendly interface for seamless interaction.
+## 📌 Project Overview
 
-## Technologies Used
+**Stuvio AI** is a web application designed to enhance learning by generating short, informative videos and interactive quizzes on any given topic. Leveraging **AI**, it creates engaging content, synthesizes speech, and provides a structured learning experience.
 
-* **Backend:** Flask (Python Web Framework)
-* **AI Integration:** Google Gemini API
-* **Text-to-Speech:** `gTTS` (Google Text-to-Speech)
-* **Video Processing:** `moviepy` (Python library for video editing)
-* **Frontend:** HTML, CSS, JavaScript
-* **Environment Management (Recommended):** Python `venv`
-* **Dependency Management:** `pip`
+---
 
-## Project Structure
-Okay, creating a good README.md file is essential for any project! It helps others (and your future self) understand what the project is about, how to set it up, and how to use it.
+## ✨ Features
 
-Here's a comprehensive README.md content suggestion for your "Stuvio AI" educational app. You can copy and paste this into a file named README.md in your project's root directory (C:\Users\divya\Downloads\Documents\project).
+- 📚 **Topic-Based Content Generation** – Input a topic and generate relevant educational content.
+- 🎥 **Video Creation** – Synthesizes speech and combines it with a background image.
+- 📝 **Interactive Quizzes** – Tests understanding with MCQs based on the topic.
+- 💻 **Dynamic UI** – Smooth and user-friendly interface.
 
-Remember to replace placeholder values like YOUR_GEMINI_API_KEY and YOUR_FLASK_SECRET_KEY with your actual information.
+---
 
-Markdown
+## 🛠️ Technologies Used
 
-# Stuvio AI: Interactive Educational Video & Quiz Generator
+- **Backend**: Flask (Python Web Framework)  
+- **AI Integration**: Google Gemini API  
+- **Text-to-Speech**: gTTS (Google Text-to-Speech)  
+- **Video Processing**: moviepy  
+- **Frontend**: HTML, CSS, JavaScript  
+- **Environment Management**: Python `venv`  
+- **Dependency Management**: pip  
 
-## Project Overview
+---
 
-Stuvio AI is a web application designed to enhance learning by generating short, informative videos and interactive quizzes on any given topic. Leveraging AI, it creates engaging content, synthesizes speech, and provides a structured learning experience.
+## 📁 Project Structure
 
-## Features
+- `ai_video.py` – Python script for AI/video generation logic  
+- `index.py` – Main server file  
+- `static/` – Static assets  
+  - `style.css` – Custom styling  
+  - `script.js` – JavaScript for interactivity  
+  - `background.jpg` – Background image used in videos  
+  - `output.mp4` – Generated video (appears here)  
+- `templates/` – HTML templates  
+  - `index.html` – Main landing page  
+  - `video_page.html` – Displays the generated video  
+  - `quiz_page.html` – Displays quiz questions  
+- `.env` – Stores environment variables (keep secret)  
+- `requirements.txt` – Lists Python dependencies  
+- `README.md` – This file  
 
-* **Topic-Based Content Generation:** Input a topic, and the AI generates relevant educational content.
-* **Video Creation:** Synthesizes speech from the generated content and combines it with a background image to create short, educational videos.
-* **Interactive Quizzes:** Generates multiple-choice quizzes based on the content to test user understanding.
-* **Dynamic UI:** Provides a user-friendly interface for seamless interaction.
+---
 
-## Technologies Used
+## 🧩 Setup and Local Installation
 
-* **Backend:** Flask (Python Web Framework)
-* **AI Integration:** Google Gemini API
-* **Text-to-Speech:** `gTTS` (Google Text-to-Speech)
-* **Video Processing:** `moviepy` (Python library for video editing)
-* **Frontend:** HTML, CSS, JavaScript
-* **Environment Management (Recommended):** Python `venv`
-* **Dependency Management:** `pip`
+### ✅ Prerequisites
 
-## Project Structure
+- Python 3.8+
+- pip (Python package installer)
+- FFmpeg (required for moviepy)
 
-stuvio_project/
+### 🔧 Install FFmpeg
 
-├── ai_video.py  #  Python script for AI/video generation logic
-├── index.py
-├── static/                # Static assets (CSS, JS, images, generated video output)
-│   ├── style.css
-│   ├── script.js
-│   ├── background.jpg
-│   └── (generated videos like output.mp4 will appear here)
-├── templates/             # HTML templates for Flask
-│   ├── index.html         # Main landing page
-│   ├── video_page.html    # Page to display generated video
-│   └── quiz_page.html     # Page to display the quiz
-├── .env                   # Environment variables (e.g., API keys - NOT committed to Git)
-├── requirements.txt       # Python dependencies
-└── README.md              # This file
-## Setup and Local Installation
+- **Windows**: Download from [ffmpeg.org](https://ffmpeg.org), extract, and add `bin/` folder to PATH  
+- **macOS**:
+  ```bash
+  brew install ffmpeg
+````
 
-Follow these steps to get Stuvio AI running on your local machine.
+* **Linux (Ubuntu/Debian)**:
 
-### Prerequisites
+  ```bash
+  sudo apt update && sudo apt install ffmpeg
+  ```
 
-* Python 3.8+ installed.
-* `pip` (Python package installer).
-* **FFmpeg:** `moviepy` requires FFmpeg to be installed on your system and accessible via your system's PATH.
-    * **Windows:** Download a build from [ffmpeg.org/download.html](https://ffmpeg.org/download.html) (e.g., from gyan.dev or BtbN), extract it, and add the path to its `bin` folder (e.g., `C:\ffmpeg\bin`) to your system's Environment Variables `Path`.
-    * **macOS:** `brew install ffmpeg`
-    * **Linux (Ubuntu/Debian):** `sudo apt update && sudo apt install ffmpeg`
+---
 
-### Installation Steps
+### 🔧 Installation Steps
 
-1.  **Clone the Repository (if applicable) or Navigate to Project:**
-    If you've cloned this project from GitHub:
-    ```bash
-    git clone <your-repo-url>
-    cd stuvio_project
-    ```
-    Otherwise, navigate directly to your project folder:
-    ```bash
-    cd C:\Users\divya\Downloads\Documents\project
-    ```
+1. **Clone the repository** or move to the project folder:
 
-2.  **Create and Activate a Virtual Environment (Highly Recommended):**
-    While you mentioned not using `venv`, it's best practice for dependency management. If you decide to use it:
-    ```bash
-    python -m venv venv
-    # On Windows (PowerShell):
-    .\venv\Scripts\Activate.ps1
-    # On Windows (Command Prompt):
-    venv\Scripts\activate.bat
-    # On macOS/Linux:
-    source venv/bin/activate
-    ```
-    If you choose **not** to use `venv`, skip this step and be aware that dependencies will be installed globally.
+   ```bash
+   git clone <your-repo-url>
+   cd stuvio_project
+   ```
 
-3.  **Install Python Dependencies:**
-    You will need a `requirements.txt` file listing all your Python dependencies. If you don't have one, or to generate one:
-    * Create a file named `requirements.txt` in your project's root directory.
-    * Add the following (and any other libraries your `add.py` or `ai_video.py` might use):
-        ```
-        Flask
-        google-generativeai
-        moviepy
-        gTTS
-        python-dotenv # Required if you use .env files
-        ```
-    * Then install them:
-        ```bash
-        pip install -r requirements.txt
-        ```
+   Or:
 
-4.  **Set Up Environment Variables:**
-    Your application requires API keys. Create a file named `.env` in your project's root directory. **Do NOT commit this file to Git.**
+   ```bash
+   cd C:\Users\divya\Downloads\Documents\project
+   ```
 
-    ```
-    GEMINI_API_KEY="YOUR_ACTUAL_GEMINI_API_KEY_HERE"
-    FLASK_SECRET_KEY="A_LONG_RANDOM_STRING_FOR_SECURITY"
-    ```
-    *Replace the placeholder values with your actual keys.*
+2. **Create and activate a virtual environment** (recommended):
 
-5.  **Run the Flask Application:**
-    Ensure your virtual environment is active (if using one).
+   ```bash
+   python -m venv venv
+   ```
 
-    ```bash
-    python api/index.py
-    ```
-    You should see output indicating the server is running.
+   * Windows PowerShell:
 
-## Usage
+     ```bash
+     .\venv\Scripts\Activate.ps1
+     ```
+   * Windows CMD:
 
-1.  Open your web browser and navigate to `http://127.0.0.1:5000/`.
-2.  On the main page, enter a topic for which you want to generate content.
-3.  Click the "Generate Video" or "Generate Quiz" buttons.
-4.  Wait for the content to be generated. Video generation might take some time depending on the topic length and your system's performance.
+     ```bash
+     venv\Scripts\activate.bat
+     ```
+   * macOS/Linux:
 
-## Important Notes
+     ```bash
+     source venv/bin/activate
+     ```
 
-* **Video Generation Performance:** `moviepy` can be CPU-intensive and slow, especially for longer videos. It also requires FFmpeg.
-* **API Usage:** Be mindful of API rate limits and costs associated with the Google Gemini API.
-* **Error Handling:** The current error message "An error occurred during video/quiz generation. Please try again or check server logs" indicates a backend issue. Always check the terminal where your Flask app is running for detailed Python tracebacks to diagnose problems.
+3. **Install required packages**:
 
+   ```bash
+   pip install -r requirements.txt
+   ```
+
+4. **Set up environment variables**
+
+   Create a `.env` file in the root folder with:
+
+   ```
+   GEMINI_API_KEY="YOUR_ACTUAL_GEMINI_API_KEY"
+   FLASK_SECRET_KEY="YOUR_FLASK_SECRET_KEY"
+   ```
+
+---
+
+## 🚀 Run the App
+
+```bash
+python api/index.py
+```
+
+Visit [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
+
+---
+
+## 🧪 Usage
+
+1. Enter a topic in the input box.
+2. Click **Generate Video** or **Generate Quiz**.
+3. Wait for the AI to generate the result.
+4. The video/quiz will be displayed on a new page.
+
+---
+
+## ⚠️ Important Notes
+
+* **Video generation** may be slow for long topics.
+* **FFmpeg** must be properly installed for moviepy to work.
+* **Check terminal logs** for debugging if you see error messages in the browser.
+* **Gemini API** usage may be limited or charged—check your usage.
+
+---
+
+```
+
+Let me know if you want a version with GitHub badges, light/dark mode screenshots, or deployment instructions!
+```
