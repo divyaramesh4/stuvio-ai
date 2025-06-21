@@ -1,6 +1,5 @@
 
 
-```md
 # Stuvio AI: Interactive Educational Video & Quiz Generator
 
 ---
