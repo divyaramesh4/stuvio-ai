@@ -1,11 +1,4 @@
-Sure! Here's a clean and styled **README.md** file you can copy and paste directly. I've formatted the **project structure** section using bullet points instead of the messy tree diagram, so it looks neat and readable inside a `.md` file:
 
----
-
-````markdown
-# 🎓 Stuvio AI: Interactive Educational Video & Quiz Generator
-
----
 
 ## 📌 Project Overview
 
@@ -65,9 +58,9 @@ Sure! Here's a clean and styled **README.md** file you can copy and paste direct
 
 - **Windows**: Download from [ffmpeg.org](https://ffmpeg.org), extract, and add `bin/` folder to PATH  
 - **macOS**:
-  ```bash
+
   brew install ffmpeg
-````
+
 
 * **Linux (Ubuntu/Debian)**:
 
@@ -159,7 +152,3 @@ Visit [http://127.0.0.1:5000](http://127.0.0.1:5000) in your browser.
 
 ---
 
-```
-
-Let me know if you want a version with GitHub badges, light/dark mode screenshots, or deployment instructions!
-```
