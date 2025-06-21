@@ -1,35 +1,42 @@
 
-# 🎓 Stuvio AI: Interactive Educational Video & Quiz Generator
+
+```md
+# Stuvio AI: Interactive Educational Video & Quiz Generator
 
 ---
 
 ## 📌 Project Overview
 
-**Stuvio AI** is a **web application** designed to enhance learning by generating **short, informative videos** and **interactive quizzes** on any given topic.  
-Leveraging **Artificial Intelligence**, it creates **engaging content**, synthesizes speech, and offers a structured learning experience for students.
+**Stuvio AI** is a web application that enhances learning by generating short educational videos and interactive quizzes using AI. It converts text into engaging multimedia content to provide a structured and interactive learning experience.
 
 ---
 
 ## ✨ Features
 
-- **📚 Topic-Based Content Generation** – Input a topic and generate relevant educational material.
-- **🎥 Video Creation** – Converts the content to speech and merges it with a background image.
-- **📝 Interactive Quizzes** – Creates multiple-choice questions to reinforce understanding.
-- **💻 Dynamic UI** – Clean, intuitive, and user-friendly interface.
+- 📚 **Topic-Based Content Generation**  
+  Enter any topic, and the app generates educational content using AI.
+
+- 🎥 **Video Creation**  
+  Synthesizes speech and overlays it on a background to produce short videos.
+
+- 📝 **Interactive Quizzes**  
+  Automatically generates MCQs based on the provided topic.
+
+- 💻 **Dynamic UI**  
+  Responsive and user-friendly interface for easy interaction.
 
 ---
 
 ## 🛠️ Technologies Used
 
-| Category              | Tools/Frameworks                  |
-|-----------------------|-----------------------------------|
-| **Backend**           | Flask (Python Web Framework)      |
-| **AI Integration**    | Google Gemini API                 |
-| **Text-to-Speech**    | gTTS (Google Text-to-Speech)      |
-| **Video Processing**  | moviepy                           |
-| **Frontend**          | HTML, CSS, JavaScript             |
-| **Environment**       | Python `venv` (Virtual Environment) |
-| **Dependency Manager**| pip                               |
+| Layer       | Tech Stack                         |
+|-------------|------------------------------------|
+| Backend     | Flask (Python Web Framework)       |
+| AI API      | Google Gemini API                  |
+| TTS         | gTTS (Google Text-to-Speech)       |
+| Video       | moviepy (Python video editor)      |
+| Frontend    | HTML, CSS, JavaScript              |
+| Env Mgmt    | Python `venv`, `pip`               |
 
 ---
 
@@ -38,20 +45,24 @@ Leveraging **Artificial Intelligence**, it creates **engaging content**, synthes
 ```
 
 stuvio\_project/
-├── ai\_video.py           # Core logic for content and video generation
-├── index.py              # Flask app entry point
-├── static/               # CSS, JS, image, and output video
+│
+├── ai\_video.py            # Core AI and video logic
+├── index.py               # Flask server entry point
+│
+├── static/                # Static files
 │   ├── style.css
 │   ├── script.js
 │   ├── background.jpg
-│   └── output.mp4        # Generated video output
-├── templates/            # HTML files for rendering views
+│   └── output.mp4         # Generated video
+│
+├── templates/             # HTML templates
 │   ├── index.html
 │   ├── video\_page.html
 │   └── quiz\_page.html
-├── .env                  # API keys and sensitive variables (excluded from Git)
-├── requirements.txt      # Project dependencies
-└── README.md             # You are here
+│
+├── .env                   # API keys & secrets (not committed)
+├── requirements.txt       # Python dependencies
+└── README.md              # Project documentation
 
 ````
 
@@ -61,21 +72,19 @@ stuvio\_project/
 
 ### ✅ Prerequisites
 
-- **Python 3.8+**
-- **pip**
-- **FFmpeg** (used by `moviepy`)
+- Python 3.8+
+- pip
+- FFmpeg (Required for `moviepy`)
 
-### 🔧 Install FFmpeg
+### 🔧 FFmpeg Installation
 
-- **Windows**:  
-  Download from [ffmpeg.org](https://ffmpeg.org), extract it, and add the `bin/` path to your system’s environment variables.
-
-- **macOS**:
+- **Windows**: Download from [ffmpeg.org](https://ffmpeg.org) → extract → add `/bin` to PATH  
+- **macOS**:  
   ```bash
   brew install ffmpeg
 ````
 
-* **Linux (Ubuntu/Debian)**:
+* **Linux**:
 
   ```bash
   sudo apt update && sudo apt install ffmpeg
@@ -83,44 +92,32 @@ stuvio\_project/
 
 ---
 
-### 🔧 Installation Steps
+### ⚙️ Installation Steps
 
-1. **Clone or open your project folder**:
+1. **Clone or open your project folder**
 
    ```bash
    git clone <your-repo-url>
    cd stuvio_project
    ```
 
-   Or:
+   *Or manually navigate to:*
 
    ```bash
    cd C:\Users\divya\Downloads\Documents\project
    ```
 
-2. **Create and activate a virtual environment** (recommended):
+2. **Create and activate a virtual environment**
 
    ```bash
    python -m venv venv
    ```
 
-   * **PowerShell**:
+   * **PowerShell**: `.\venv\Scripts\Activate.ps1`
+   * **CMD**: `venv\Scripts\activate.bat`
+   * **Linux/macOS**: `source venv/bin/activate`
 
-     ```bash
-     .\venv\Scripts\Activate.ps1
-     ```
-   * **CMD**:
-
-     ```bash
-     venv\Scripts\activate.bat
-     ```
-   * **macOS/Linux**:
-
-     ```bash
-     source venv/bin/activate
-     ```
-
-3. **Install dependencies**:
+3. **Install dependencies**
 
    ```bash
    pip install -r requirements.txt
@@ -128,16 +125,16 @@ stuvio\_project/
 
 4. **Configure environment variables**
 
-   Create a `.env` file in the root directory and add:
+   Create a `.env` file with:
 
    ```
-   GEMINI_API_KEY="YOUR_ACTUAL_GEMINI_API_KEY"
-   FLASK_SECRET_KEY="YOUR_FLASK_SECRET_KEY"
+   GEMINI_API_KEY="your_actual_gemini_api_key"
+   FLASK_SECRET_KEY="your_secret_key_here"
    ```
 
 ---
 
-## 🚀 Run the App
+## 🚀 Running the Application
 
 Start the Flask server:
 
@@ -145,25 +142,28 @@ Start the Flask server:
 python api/index.py
 ```
 
-Open your browser and visit: [http://127.0.0.1:5000](http://127.0.0.1:5000)
+Open in browser: [http://127.0.0.1:5000](http://127.0.0.1:5000)
 
 ---
 
 ## 🧪 Usage Guide
 
-1. Enter a **topic** on the homepage.
+1. Enter a **topic** in the homepage input field.
 2. Click **Generate Video** or **Generate Quiz**.
-3. Wait for the system to process your request.
-4. The resulting video or quiz will be displayed on a new screen.
+3. Wait for processing.
+4. View the results on the respective output page.
 
 ---
 
-## ⚠️ Important Notes
+## ⚠️ Notes
 
-* **Video generation** time may vary depending on the length of the input.
-* Make sure **FFmpeg** is properly installed and accessible from your system’s PATH.
-* If something goes wrong, **check terminal logs** where Flask is running.
-* Be cautious with your **Gemini API usage** — stay within rate limits and check for potential billing.
+* Video generation may take time depending on input length.
+* Ensure FFmpeg is installed and added to system `PATH`.
+* Check the terminal for Flask logs if you encounter errors.
+* Monitor Google Gemini API usage to avoid overages.
 
 ---
+
+```
+
 
