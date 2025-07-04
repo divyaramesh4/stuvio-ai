@@ -152,3 +152,5 @@ Then open your browser and go to:
 - Be mindful of **Gemini API usage limits** and potential charges.
 
 ---
+▶️ [Watch demo video](https://drive.google.com/file/d/18kVZHTxKGZMKAdPtbcNRjF_z3bCV-1O6/view)
+
